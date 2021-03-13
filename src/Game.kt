@@ -1,9 +1,9 @@
 class Game {
     val path = mutableListOf<Direction>( Direction.START )
 
-    val north = { Direction.NORTH }
-    val south = { Direction.SOUTH }
-    val east = { Direction.EAST }
-    val west = { Direction.WEST }
-    val end = { Direction.END; println("Game Over: $path"); path.clear(); false }
+    val north = { path.add(Direction.NORTH) }
+    val south = { path.add(Direction.SOUTH) }
+    val east = { path.add(Direction.EAST) }
+    val west = { path.add(Direction.WEST) }
+    val end = { path.add(Direction.END); println("Game Over: $path"); path.clear(); false }
 }
