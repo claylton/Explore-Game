@@ -2,6 +2,7 @@ fun main (){
     val game = Game()
     var run = true
 
+    println(Location().currentLocation)
     while (run){
         print("Enter a direction: n/s/e/w or end to exit: ")
         val input = readLine()

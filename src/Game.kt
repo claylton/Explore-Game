@@ -7,16 +7,18 @@ class Game {
     val west = { path.add(Direction.WEST) }
     val end = { path.add(Direction.END); println("\nGame Over: $path"); path.clear(); false }
 
+    val location = Location()
+
     fun move(where: () -> Unit){
         where.invoke()
     }
 
     fun makeMove(char: String?){
         when(char){
-            "n" -> move { north() }
-            "s" -> move { south() }
-            "e" -> move { east() }
-            "w" -> move { west() }
+            "n" -> move { north(); location.updateLocation(Direction.NORTH) }
+            "s" -> move { south(); location.updateLocation(Direction.SOUTH) }
+            "e" -> move { east(); location.updateLocation(Direction.EAST) }
+            "w" -> move { west(); location.updateLocation(Direction.WEST) }
             else -> move { end() }
         }
     }
