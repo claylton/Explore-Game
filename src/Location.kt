@@ -9,15 +9,17 @@ class Location(val width: Int = 4, val height: Int = 4) {
     fun updateLocation (direction: Direction) {
         if(direction == Direction.NORTH){
             currentLocation = Pair(currentLocation.first, (currentLocation.second + 1).rem(height))
+
         } else if (direction == Direction.SOUTH){
             currentLocation = Pair(currentLocation.first, (currentLocation.second - 1).absoluteValue.rem(height))
+
         } else if (direction == Direction.EAST){
             currentLocation = Pair((currentLocation.first + 1).rem(width), currentLocation.second)
+
         } else if (direction == Direction.WEST){
             currentLocation = Pair((currentLocation.first - 1).absoluteValue.rem(width), currentLocation.second)
 
         }
-        println(currentLocation)
     }
 
     init {

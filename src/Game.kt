@@ -22,4 +22,6 @@ class Game {
             else -> move { end() }
         }
     }
+
+    fun description() = location.map[location.currentLocation.first.rem(location.width)] [location.currentLocation.second.rem(location.height)]
 }
